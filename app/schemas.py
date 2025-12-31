@@ -1,6 +1,6 @@
 from typing import Optional, Dict, Any, List
 from pydantic import BaseModel
-
+from datetime import datetime
 
 class DishCreate(BaseModel):
     name: str
@@ -86,7 +86,7 @@ class OrderOut(BaseModel):
     id: int
     client_id: int
     payment_type: Optional[str] = None
-    created_at: Optional[str] = None
+    created_at: Optional[datetime] = None
     items: List[OrderItemOut]
 
     class Config:
